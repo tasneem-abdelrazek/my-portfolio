@@ -101,7 +101,7 @@ const Skills = () => {
             <span className="relative inline-block">
               <span className="absolute inset-0 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] blur-2xl opacity-40"></span>
               <span className="relative bg-gradient-to-r from-[#FFBBE1] via-[#DD7BDF] to-[#FFBBE1] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,187,225,0.6)] animate-gradient-x bg-[length:200%_200%]">
-                Expertise
+                Skills
               </span>
             </span>
           </h1>
@@ -140,7 +140,7 @@ const Skills = () => {
           {[
             { label: "Total Skills", value: `${skillsData.expert.length + skillsData.familiar.length}+`, color: "from-[#FFBBE1] to-[#DD7BDF]" },
             { label: "Expert Level", value: `${skillsData.expert.length}`, color: "from-[#DD7BDF] to-[#FFBBE1]" },
-            { label: "Years Experience", value: "1+", color: "from-[#FFBBE1] to-[#DD7BDF]" },
+            { label: "Y. Experience", value: "1+", color: "from-[#FFBBE1] to-[#DD7BDF]" },
             { label: "Projects Done", value: "10+", color: "from-[#DD7BDF] to-[#FFBBE1]" },
           ].map((stat, index) => (
             <div key={index} className="group relative">
