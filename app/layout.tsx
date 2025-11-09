@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Tajawal, Cairo } from "next/font/google";
+import { Inter, Tajawal } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
+import Footer from "@/components/Home/Footer/Footer";
 
 // fonts
 const inter = Inter({
@@ -13,12 +14,6 @@ const inter = Inter({
 const tajawal = Tajawal({
   subsets: ["arabic"],
   weight: ["400", "500", "700"],
-  display: "swap",
-});
-
-const cairo = Cairo({
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -34,13 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* #0d0d1f */}
-      {/* #e964c1ff */}
-      {/* #ab488eff */}
-      <body className={`${inter.className} ${tajawal.className} antialiased 
-      bg-[#e964c1ff] text-white`}>
+      <body className={`${inter.className} ${tajawal.className} antialiased bg-[#e964c1ff] text-white`}>
         <ResponsiveNav />
         {children}
+        <Footer />
       </body>
     </html>
   );
