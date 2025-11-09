@@ -75,19 +75,19 @@ const Hero = () => {
         </div>
 
         {/* Headline */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-4 text-center font-black leading-tight animate-fadeInUp animation-delay-600 text-white">
+        <h1 className="w-full lg:w-[70%] mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-4 text-center font-black leading-tight animate-fadeInUp animation-delay-600 text-white">
           Turning{" "}    
           <span className="bg-gradient-to-r from-[#FFBBE1] via-[#DD7BDF] to-[#FFBBE1] bg-clip-text text-transparent">
             imagination
           </span>{" "}
-          into interactive <br /> experiences that{" "}
-          <span className=" text-[#FFBBE1]/90">
+          into interactive experiences that{" "}
+          <span className="text-[#FFBBE1]/90">
             captivate and connect
           </span>
         </h1>
 
         {/* Typewriter */}
-        <h2 className="mt-8 text-lg sm:text-2xl md:text-3xl font-black flex flex-wrap justify-center gap-3 animate-fadeInUp animation-delay-900">
+        <h2 className="mt-2 text-lg sm:text-2xl md:text-3xl font-black flex flex-wrap justify-center gap-3 animate-fadeInUp animation-delay-900">
           A passionate
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFBBE1] via-[#DD7BDF] to-[#FFBBE1]">
             <Typewriter
@@ -111,7 +111,7 @@ const Hero = () => {
         {/* Button */}
         <button
           onClick={scrollToProjects}
-          className="group mt-10 px-10 py-4 relative cursor-pointer rounded-full text-lg font-black text-white overflow-hidden transform hover:scale-110 transition-all duration-500 animate-fadeInUp animation-delay-1200"
+          className="group mt-5 px-10 py-4 relative cursor-pointer rounded-full text-lg font-black text-white overflow-hidden transform hover:scale-110 transition-all duration-500 animate-fadeInUp animation-delay-1200"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[#FFBBE1] via-[#DD7BDF] to-[#FFBBE1] animate-gradient-x"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#FFBBE1] via-[#DD7BDF] to-[#FFBBE1] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>

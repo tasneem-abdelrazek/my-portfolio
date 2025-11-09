@@ -26,8 +26,8 @@ const projects = [
     description: "Stunning portfolio with interactive animations",
     image: "/images/portfolio-screen.png",
     tags: ["Next.js", "Animations", "3D"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    github: "",
+    demo: "https://my-portfolio-nu-snowy-64.vercel.app/",
     icon: FaPalette,
   }
 ];

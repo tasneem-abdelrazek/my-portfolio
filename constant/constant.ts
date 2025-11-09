@@ -45,7 +45,7 @@ export const servicesData = [
     id: 2,
     title: "Landing Page",
     description: "One web page for small businesses.",
-    image: "/images/landing-page-service.png",
+    image: "/images/coffee-service.png",
     features: ["React / HTML, CSS, JavaScript", "Bootstrap, Tailwind", "Responsive Design"],
     whatsappMessage: "Hello, I'm contacting for landing page service."
   }

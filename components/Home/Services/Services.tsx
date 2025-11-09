@@ -13,7 +13,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="relative min-h-screen pt-[4vh] pb-16 flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-950 to-black">
+    <section id="services" className="relative min-h-screen pt-[4vh] pb-10 flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-950 to-black">
       {/* Background Effects */}
       {backgroundEffects}
 
@@ -72,7 +72,7 @@ const Services = () => {
                 <div className="p-8 space-y-6">
                   {/* Title */}
                   <div>
-                    <h3 className="text-2xl font-black text-white mb-3 group-hover:text-[#FFBBE1] transition-colors duration-300">
+                    <h3 className="text-2xl font-black text-white mb-2 group-hover:text-[#FFBBE1] transition-colors duration-300">
                       {service.title}
                     </h3>
                     <p className="text-gray-400 leading-relaxed">
@@ -118,7 +118,7 @@ const Services = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center animate-fadeInUp animation-delay-900">
+        <div className="mt-10 text-center animate-fadeInUp animation-delay-900">
           <div className="inline-block bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
             <p className="text-xl text-gray-300 mb-4">
               Don't see what you're looking for?

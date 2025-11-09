@@ -39,14 +39,6 @@ const About = () => {
       icon: FaAward,
       color: "from-[#DD7BDF] to-[#FFBBE1]"
     },
-    // {
-    //   title: "Web Development Fundamentals",
-    //   organization: "IBM",
-    //   period: "2025",
-    //   track: "Professional Certificate",
-    //   icon: FaAward,
-    //   color: "from-[#FFBBE1] to-[#DD7BDF]"
-    // }
   ];
 
   const workExperience = [
@@ -70,11 +62,9 @@ const About = () => {
 
   return (
     <section id="about" className="relative min-h-screen pt-[4vh] pb-8 flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-950 to-black">
-      {/* Background Effects */}
       {backgroundEffects}
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4">
-        
         {/* Section Header */}
         <div className="text-center mb-16 animate-fadeInUp">
           <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 rounded-full border border-[#DD7BDF]/30 mb-6">
@@ -101,8 +91,8 @@ const About = () => {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 animate-fadeInUp animation-delay-300">
-          {[
-            { icon: FaGraduationCap, label: "Education", value: "B.Sc CS", color: "from-[#FFBBE1] to-[#DD7BDF]" },
+          {[ 
+            { icon: FaGraduationCap, label: "Education", value: "B.Sc", color: "from-[#FFBBE1] to-[#DD7BDF]" },
             { icon: FaAward, label: "Scholarships", value: "5+", color: "from-[#DD7BDF] to-[#FFBBE1]" },
             { icon: BsBriefcase, label: "Experience", value: "1+ Year", color: "from-[#FFBBE1] to-[#DD7BDF]" },
             { icon: FaLaptopCode, label: "Projects", value: "10+", color: "from-[#DD7BDF] to-[#FFBBE1]" }
@@ -129,7 +119,7 @@ const About = () => {
           </div>
           
           <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-[#DD7BDF]/30 transition-all duration-500 group">
-            <div className="flex items-start gap-6">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6">
               <div className="relative">
                 <div className="absolute -inset-2 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-all duration-300"></div>
                 <div className="relative w-16 h-16 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF] rounded-xl flex items-center justify-center">
@@ -139,15 +129,14 @@ const About = () => {
               <div className="flex-1">
                 <h3 className="text-2xl font-black text-white mb-2">Bachelor's Degree in Business Information Systems (BIS)</h3>
                 <p className="text-[#FFBBE1] font-semibold mb-2 text-lg">Assiut University</p>
-                <div className="flex items-center gap-4 text-gray-400 mb-3">
+                <div className="flex justify-center sm:justify-start items-center gap-4 text-gray-400 mb-3 text-sm">
                   <BsCalendar3 className="w-4 h-4" />
                   <span>Graduated: June 2024</span>
-                  <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>Grade: Very Good</span>
+                  <span className="hidden sm:block w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span className="hidden sm:block">Grade: Very Good</span>
                 </div>
                 <p className="text-gray-400 leading-relaxed">
-                  Graduated with very good, laying a strong foundation in business principles, 
-                  IT, and software development.
+                  Graduated with very good, laying a strong foundation in business principles, IT, and software development.
                 </p>
               </div>
             </div>
@@ -167,9 +156,8 @@ const About = () => {
               <div 
                 key={index}
                 className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-[#DD7BDF]/30 transition-all duration-500 group hover:scale-105"
-                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
                   <div className="relative">
                     <div className={`absolute -inset-2 bg-gradient-to-r ${scholarship.color} rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-all duration-300`}></div>
                     <div className={`relative w-12 h-12 bg-gradient-to-br ${scholarship.color} rounded-xl flex items-center justify-center`}>
@@ -179,7 +167,7 @@ const About = () => {
                   <div className="flex-1">
                     <h3 className="text-lg font-black text-white mb-1">{scholarship.title}</h3>
                     <p className="text-[#FFBBE1] font-semibold text-sm mb-2">{scholarship.organization}</p>
-                    <div className="flex items-center gap-2 text-xs text-gray-400 mb-2">
+                    <div className="flex justify-center sm:justify-start items-center gap-2 text-xs text-gray-400 mb-2">
                       <BsCalendar3 className="w-3 h-3" />
                       <span>{scholarship.period}</span>
                     </div>
@@ -205,7 +193,7 @@ const About = () => {
                 key={index}
                 className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-[#DD7BDF]/30 transition-all duration-500 group hover:scale-105"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
                   <div className="relative">
                     <div className={`absolute -inset-2 bg-gradient-to-r ${job.color} rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-all duration-300`}></div>
                     <div className={`relative w-14 h-14 bg-gradient-to-br ${job.color} rounded-xl flex items-center justify-center`}>
@@ -215,7 +203,7 @@ const About = () => {
                   <div className="flex-1">
                     <h3 className="text-xl font-black text-white mb-1">{job.title}</h3>
                     <p className="text-[#FFBBE1] font-semibold mb-2">{job.company}</p>
-                    <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
+                    <div className="flex justify-center sm:justify-start items-center gap-2 text-sm text-gray-400 mb-3">
                       <BsCalendar3 className="w-4 h-4" />
                       <span>{job.period}</span>
                     </div>
@@ -229,7 +217,7 @@ const About = () => {
 
         {/* Journey Highlight */}
         <div className="bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 backdrop-blur-xl rounded-2xl p-8 border border-[#DD7BDF]/30 animate-fadeInUp animation-delay-1500">
-          <div className="flex items-start gap-4">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
             <FaHeart className="w-8 h-8 text-[#FFBBE1] animate-pulse flex-shrink-0 mt-1" />
             <div>
               <h3 className="text-2xl font-black text-white mb-4">My Journey</h3>
@@ -251,13 +239,9 @@ const About = () => {
             </div>
           </div>
         </div>
-
       </div>
 
-      {/* Bottom Divider */}
       {sectionDivider}
-
-      {/* Animations */}
       <style jsx>{animationStyles}</style>
     </section>
   );
