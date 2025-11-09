@@ -79,7 +79,7 @@ const Project = () => {
 
             {/* Main Heading */}
             <div>
-              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
+              <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
                 <span className="drop-shadow-2xl text-white">
                   Transform Your
                 </span>
