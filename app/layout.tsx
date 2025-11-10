@@ -20,6 +20,9 @@ const tajawal = Tajawal({
 export const metadata: Metadata = {
   title: "Tasneem's Portfolio",
   description: "Created with Next.js 16",
+  other: {
+    "google-site-verification": "sTT9l0Fz0VJOj7NP6nQsfIPJqPfSyj0xXcPGoM8OUI8",
+  },
 };
 
 export default function RootLayout({
