@@ -1,10 +1,33 @@
 "use client";
 import React from "react";
 import { BsStars } from "react-icons/bs";
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode, FaGitAlt, FaFigma, FaBootstrap, } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb, SiRedux, SiFirebase, SiExpress, SiJira, SiOpenai, } from "react-icons/si";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact,
+  FaNode,
+  FaGitAlt,
+  FaFigma,
+  FaBootstrap,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiMongodb,
+  SiRedux,
+  SiFirebase,
+  SiExpress,
+  SiJira,
+  SiOpenai,
+} from "react-icons/si";
 import { skillsData } from "@/constant/constant";
-import { backgroundEffects, sectionDivider, animationStyles } from "@/constant/theme";
+import {
+  backgroundEffects,
+  sectionDivider,
+  animationStyles,
+} from "@/constant/theme";
 
 const iconMap: Record<string, any> = {
   html5: FaHtml5,
@@ -29,7 +52,7 @@ const iconMap: Record<string, any> = {
 const Skills = () => {
   const renderSkillCard = (skill: any, index: number) => {
     const Icon = iconMap[skill.icon];
-    
+
     return (
       <div
         key={index}
@@ -38,7 +61,7 @@ const Skills = () => {
       >
         {/* Glow Effect */}
         <div className="absolute -inset-1 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-2xl blur opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
-        
+
         <div className="relative space-y-4">
           {/* Icon & Name */}
           <div className="flex items-center gap-4">
@@ -73,7 +96,11 @@ const Skills = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 rounded-full border border-[#DD7BDF]/20">
             <BsStars className="w-3 h-3 text-[#FFBBE1]" />
             <span className="text-xs font-bold text-gray-300">
-              {skill.percentage >= 85 ? "Expert" : skill.percentage >= 70 ? "Advanced" : "Intermediate"}
+              {skill.percentage >= 85
+                ? "Expert"
+                : skill.percentage >= 70
+                ? "Advanced"
+                : "Intermediate"}
             </span>
           </div>
         </div>
@@ -82,7 +109,10 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="relative min-h-screen pt-[4vh] pb-16 flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-950 to-black">
+    <section
+      id="skills"
+      className="relative min-h-screen pt-[4vh] pb-16 flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-950 to-black"
+    >
       {/* Background Effects */}
       {backgroundEffects}
 
@@ -106,50 +136,117 @@ const Skills = () => {
             </span>
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency levels
+            A comprehensive overview of my technical skills and proficiency
+            levels
           </p>
         </div>
 
+        {/* Code if I want to make the  */}
+        <div className="mb-10 animate-fadeInUp animation-delay-300 md:flex md:gap-6">
+        {/* Core Skills */}
+        <div className="md:flex-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-1 w-12 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-full"></div>
+              <h2 className="text-3xl font-black text-white">Core Skills</h2>
+              <div className="h-1 flex-1 bg-gradient-to-r from-[#DD7BDF] to-transparent rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {skillsData.expert.map((skill, index) =>
+                renderSkillCard(skill, index)
+              )}
+            </div>
+          </div>
+
+        {/* Vertical Divider */}
+        <div className="hidden md:block w-px bg-white/20 mx-2"></div>
+
+        {/* Additional Skills */}
+        <div className="md:flex-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-1 w-12 bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1] rounded-full"></div>
+              <h2 className="text-3xl font-black text-white">
+                Additional Skills
+              </h2>
+              <div className="h-1 flex-1 bg-gradient-to-r from-[#FFBBE1] to-transparent rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {skillsData.familiar.map((skill, index) =>
+                renderSkillCard(skill, index)
+              )}
+            </div>
+          </div>
+        </div>
+
         {/* Expert Skills */}
-        <div className="mb-10 animate-fadeInUp animation-delay-300">
+        {/* <div className="mb-10 animate-fadeInUp animation-delay-300">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-1 w-12 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-full"></div>
             <h2 className="text-3xl font-black text-white">Core Skills</h2>
             <div className="h-1 flex-1 bg-gradient-to-r from-[#DD7BDF] to-transparent rounded-full"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {skillsData.expert.map((skill, index) => renderSkillCard(skill, index))}
+            {skillsData.expert.map((skill, index) =>
+              renderSkillCard(skill, index)
+            )}
           </div>
-        </div>
+        </div> */}
 
         {/* Familiar Skills */}
-        <div className="animate-fadeInUp animation-delay-600">
+        {/* <div className="animate-fadeInUp animation-delay-600">
           <div className="flex items-center gap-3 mb-2">
             <div className="h-1 w-12 bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1] rounded-full"></div>
-            <h2 className="text-3xl font-black text-white">Additional Skills</h2>
+            <h2 className="text-3xl font-black text-white">
+              Additional Skills
+            </h2>
             <div className="h-1 flex-1 bg-gradient-to-r from-[#FFBBE1] to-transparent rounded-full"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {skillsData.familiar.map((skill, index) => renderSkillCard(skill, index))}
+            {skillsData.familiar.map((skill, index) =>
+              renderSkillCard(skill, index)
+            )}
           </div>
-        </div>
+        </div> */}
 
-            <div className="h-1 flex-1 bg-gradient-to-r from-[#FFBBE1] to-transparent rounded-full mt-8"></div>
+        <div className="h-1 flex-1 bg-gradient-to-r from-[#FFBBE1] to-transparent rounded-full mt-8"></div>
         {/* Overall Summary */}
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fadeInUp animation-delay-900">
           {[
-            { label: "Total Skills", value: `${skillsData.expert.length + skillsData.familiar.length}+`, color: "from-[#FFBBE1] to-[#DD7BDF]" },
-            { label: "Expert Level", value: `${skillsData.expert.length}`, color: "from-[#DD7BDF] to-[#FFBBE1]" },
-            { label: "Y. Experience", value: "1+", color: "from-[#FFBBE1] to-[#DD7BDF]" },
-            { label: "Projects Done", value: "10+", color: "from-[#DD7BDF] to-[#FFBBE1]" },
+            {
+              label: "Total Skills",
+              value: `${
+                skillsData.expert.length + skillsData.familiar.length
+              }+`,
+              color: "from-[#FFBBE1] to-[#DD7BDF]",
+            },
+            {
+              label: "Expert Level",
+              value: `${skillsData.expert.length}`,
+              color: "from-[#DD7BDF] to-[#FFBBE1]",
+            },
+            {
+              label: "Y. Experience",
+              value: "1+",
+              color: "from-[#FFBBE1] to-[#DD7BDF]",
+            },
+            {
+              label: "Projects Done",
+              value: "10+",
+              color: "from-[#DD7BDF] to-[#FFBBE1]",
+            },
           ].map((stat, index) => (
             <div key={index} className="group relative">
-              <div className={`absolute -inset-1 bg-gradient-to-r ${stat.color} rounded-xl blur opacity-0 group-hover:opacity-40 transition-opacity duration-500`}></div>
+              <div
+                className={`absolute -inset-1 bg-gradient-to-r ${stat.color} rounded-xl blur opacity-0 group-hover:opacity-40 transition-opacity duration-500`}
+              ></div>
               <div className="relative bg-white/5 backdrop-blur-xl rounded-xl px-6 py-8 border border-white/10 group-hover:border-[#DD7BDF]/30 transition-all duration-300 text-center">
-                <p className={`text-4xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+                <p
+                  className={`text-4xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}
+                >
                   {stat.value}
                 </p>
-                <p className="text-gray-400 text-sm font-semibold">{stat.label}</p>
+                <p className="text-gray-400 text-sm font-semibold">
+                  {stat.label}
+                </p>
               </div>
             </div>
           ))}
