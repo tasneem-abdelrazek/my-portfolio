@@ -518,8 +518,8 @@ const About = () => {
         </div>
 
         {/* Journey */}
-        <div className="mt-10 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 backdrop-blur-xl rounded-xl p-6 border border-[#DD7BDF]/30 animate-fadeInUp animation-delay-1200">
-          <div className="flex items-start gap-4">
+        {/* <div className="mt-10 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 backdrop-blur-xl rounded-xl p-6 border border-[#DD7BDF]/30 animate-fadeInUp animation-delay-1200">
+          <div className="flex items-start gap-4 sm:flex-col">
             <FaHeart className="w-6 h-6 text-[#FFBBE1] animate-pulse" />
             <p className="text-gray-300 leading-relaxed text-lg mb-4">
               My path to becoming a Frontend Developer has been unconventional
@@ -540,6 +540,43 @@ const About = () => {
               goal is to create digital experiences that are not only beautiful
               but also solve real-world problems.
             </p>
+          </div>
+        </div> */}
+
+        <div className="mt-10 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 backdrop-blur-xl rounded-xl p-6 border border-[#DD7BDF]/30 animate-fadeInUp animation-delay-1200">
+          <div className="flex pb-2 items-center ">
+            <FaHeart className="w-8 h-8 text-[#FFBBE1] animate-pulse flex-shrink-0 " />
+            <h3 className="text-center text-2xl gap-2 mx-2 font-black">My Journey</h3>
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-start gap-8">
+            <div className="flex-1 flex flex-col lg:flex-row gap-8 text-gray-300 leading-relaxed text-lg">
+              <p className="lg:w-1/3">
+                My path to becoming a Frontend Developer has been unconventional
+                yet rewarding. Starting with a degree in BIS, I gained valuable
+                professional experience in accounting, which taught me attention
+                to detail and analytical thinking.
+              </p>
+
+              <div className="hidden lg:block w-px bg-gradient-to-b from-[#FFBBE1]/30 to-[#DD7BDF]/30 rounded-full" />
+
+              <p className="lg:w-1/3">
+                While working full-time, I pursued my passion for web
+                development through intensive training programs and
+                scholarships. This dual experience has given me a unique
+                perspective: combining business acumen with technical expertise
+                to create solutions that truly matter.
+              </p>
+
+              <div className="hidden lg:block w-px bg-gradient-to-b from-[#FFBBE1]/30 to-[#DD7BDF]/30 rounded-full" />
+
+              <p className="lg:w-1/3">
+                Today, I'm focused on building modern, responsive web
+                applications using React, Next.js, and the latest frontend
+                technologies. My goal is to create digital experiences that are
+                not only beautiful but also solve real-world problems.
+              </p>
+            </div>
           </div>
         </div>
       </div>
