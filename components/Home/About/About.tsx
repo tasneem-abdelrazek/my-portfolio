@@ -323,7 +323,7 @@ const About = () => {
   ];
 
   return (
-    <section className="relative py-12 md:py-16 bg-gradient-to-br from-gray-900 via-purple-950 to-black overflow-hidden">
+    <section className="relative py-8 md:py-10 bg-gradient-to-br from-gray-900 via-purple-950 to-black overflow-hidden">
       {backgroundEffects}
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
@@ -353,7 +353,7 @@ const About = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 animate-fadeInUp animation-delay-300">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 animate-fadeInUp animation-delay-300">
           {[
             {
               icon: FaGraduationCap,
@@ -410,8 +410,8 @@ const About = () => {
           <div className="bg-white/5 backdrop-blur-xl rounded-xl p-6 border border-white/10 hover:border-[#DD7BDF]/30 transition-all duration-500 group">
             <div className="flex flex-col sm:flex-row gap-4 text-center sm:text-left">
               <div className="relative mx-auto sm:mx-0">
-                <div className="absolute -inset-2 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-xl blur-md opacity-50 group-hover:opacity-70"></div>
-                <div className="relative w-14 h-14 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF] rounded-xl flex items-center justify-center">
+                <div className="absolute w-20 h-20 -inset-2 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-xl blur-md opacity-50 group-hover:opacity-70"></div>
+                <div className="relative w-16 h-16 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF] rounded-xl flex items-center justify-center">
                   <FaGraduationCap className="w-7 h-7 text-white" />
                 </div>
               </div>
@@ -543,7 +543,7 @@ const About = () => {
           </div>
         </div> */}
 
-        <div className="mt-10 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 backdrop-blur-xl rounded-xl p-6 border border-[#DD7BDF]/30 animate-fadeInUp animation-delay-1200">
+        {/* <div className="mt-10 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 backdrop-blur-xl rounded-xl p-6 border border-[#DD7BDF]/30 animate-fadeInUp animation-delay-1200">
           <div className="flex pb-2 items-center ">
             <FaHeart className="w-8 h-8 text-[#FFBBE1] animate-pulse flex-shrink-0 " />
             <h3 className="text-center text-2xl gap-2 mx-2 font-black">My Journey</h3>
@@ -578,7 +578,7 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {sectionDivider}

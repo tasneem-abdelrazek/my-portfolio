@@ -111,7 +111,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative py-12 md:py-16 bg-gradient-to-br from-gray-900 via-purple-950 to-black overflow-hidden"
+      className="relative py-8 md:py-10 bg-gradient-to-br from-gray-900 via-purple-950 to-black overflow-hidden"
     >
       {backgroundEffects}
 
