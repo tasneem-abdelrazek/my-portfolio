@@ -460,13 +460,13 @@ const About = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-sm font-black text-white mb-1">
+                      <h3 className="text-lg font-black text-white mb-1">
                         {s.title}
                       </h3>
-                      <p className="text-[#FFBBE1] text-xs font-semibold mb-1">
+                      <p className="text-[#FFBBE1] text-sm font-semibold mb-1">
                         {s.organization}
                       </p>
-                      <p className="text-gray-400 text-xs">{s.period}</p>
+                      <p className="text-gray-400 text-sm">{s.period}</p>
                     </div>
                   </div>
                 </div>
@@ -502,13 +502,13 @@ const About = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-sm font-black text-white mb-1">
+                      <h3 className="text-lg font-black text-white mb-1">
                         {job.title}
                       </h3>
-                      <p className="text-[#FFBBE1] text-xs font-semibold mb-1">
+                      <p className="text-[#FFBBE1] text-sm font-semibold mb-1">
                         {job.company}
                       </p>
-                      <p className="text-gray-400 text-xs">{job.period}</p>
+                      <p className="text-gray-400 text-sm">{job.period}</p>
                     </div>
                   </div>
                 </div>
