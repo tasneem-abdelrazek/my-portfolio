@@ -1,7 +1,17 @@
 "use client";
 import React from "react";
 import { NavLinks } from "@/constant/constant";
-import { FaGithub, FaLinkedin, FaEnvelope, FaHeart, FaCode, FaWhatsapp, FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaHeart,
+  FaCode,
+  FaWhatsapp,
+  FaFacebook,
+  FaInstagram,
+  FaTiktok,
+} from "react-icons/fa";
 import { BsStars, BsArrowUp } from "react-icons/bs";
 import { animationStyles } from "@/constant/theme";
 
@@ -11,22 +21,31 @@ const Footer = () => {
   };
 
   const scrollToSection = (path: string) => {
-    if (path.startsWith('#')) {
+    if (path.startsWith("#")) {
       const element = document.querySelector(path);
-      element?.scrollIntoView({ behavior: 'smooth' });
+      element?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <footer id="contact" className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-950 to-black">
+    <footer
+      id="contact"
+      className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-purple-950 to-black"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,187,225,0.1),transparent_70%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(221,123,223,0.15),transparent_50%)] animate-pulse" style={{animationDelay: '1s'}}></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,187,225,0.1),transparent_50%)] animate-pulse" style={{animationDelay: '2s'}}></div>
-      
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(221,123,223,0.15),transparent_50%)] animate-pulse"
+        style={{ animationDelay: "1s" }}
+      ></div>
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,187,225,0.1),transparent_50%)] animate-pulse"
+        style={{ animationDelay: "2s" }}
+      ></div>
+
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      
+
       {/* Floating Blobs */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF] rounded-full blur-[120px] opacity-15 animate-blob"></div>
       <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-br from-[#DD7BDF] to-[#FFBBE1] rounded-full blur-[120px] opacity-20 animate-blob animation-delay-2000"></div>
@@ -39,7 +58,6 @@ const Footer = () => {
       <div className="relative z-10 w-[90%] max-w-7xl mx-auto pt-16 pb-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 animate-fadeInUp">
-          
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center gap-3 group">
@@ -58,51 +76,69 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Turning imagination into interactive experiences that captivate and connect.
+              Turning imagination into interactive experiences that captivate
+              and connect.
             </p>
             <div className="flex items-center gap-2 text-sm animate-pulse">
               <BsStars className="w-4 h-4 text-[#FFBBE1] drop-shadow-lg" />
-              <span className="text-gray-500 font-semibold">Available for freelance <br/> and full-time jobs</span>
+              <span className="text-gray-500 font-semibold">
+                Available for freelance <br /> and full-time jobs
+              </span>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4 animation-delay-200">
-            <h4 className="text-lg font-bold text-white flex items-center gap-2">
-              Quick Links
-              <div className="h-[2px] w-8 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF]"></div>
-            </h4>
-            <ul className="space-y-2">
-              {NavLinks.map((link, index) => (
-                <li key={link.name} style={{animationDelay: `${index * 100}ms`}}>
-                  <button 
-                    onClick={() => scrollToSection(link.path)}
-                    className="group flex items-center gap-2 text-gray-400 hover:text-[#FFBBE1] transition-all duration-300"
+          {/* Quick Links + Services in same row on small screens */}
+          <div className="flex flex-wrap justify-between gap-8 md:col-span-2 lg:col-span-2">
+            {/* Quick Links */}
+            <div className="flex-1 min-w-[160px] space-y-4 animation-delay-200">
+              <h4 className="text-lg font-bold text-white flex items-center gap-2">
+                Quick Links
+                <div className="h-[2px] w-8 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF]"></div>
+              </h4>
+              <ul className="space-y-2">
+                {NavLinks.map((link, index) => (
+                  <li
+                    key={link.name}
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <span className="w-0 h-[2px] bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] group-hover:w-4 transition-all duration-300 shadow-lg shadow-[#FFBBE1]/50"></span>
-                    <span className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">{link.name}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    <button
+                      onClick={() => scrollToSection(link.path)}
+                      className="group flex items-center gap-2 text-gray-400 hover:text-[#FFBBE1] transition-all duration-300"
+                    >
+                      <span className="w-0 h-[2px] bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] group-hover:w-4 transition-all duration-300 shadow-lg shadow-[#FFBBE1]/50"></span>
+                      <span className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">
+                        {link.name}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Services */}
-          <div className="space-y-4 animation-delay-400">
-            <h4 className="text-lg font-bold text-white flex items-center gap-2">
-              Services
-              <div className="h-[2px] w-8 bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1]"></div>
-            </h4>
-            <ul className="space-y-2">
-              {["Web Development", "UI/UX Design", "Mobile Apps"].map((service, index) => (
-                <li key={service} style={{animationDelay: `${index * 100}ms`}}>
-                  <div className="group flex items-center gap-2 text-gray-400 hover:text-[#DD7BDF] transition-all duration-300 cursor-pointer">
-                    <span className="w-0 h-[2px] bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1] group-hover:w-4 transition-all duration-300 shadow-lg shadow-[#DD7BDF]/50"></span>
-                    <span className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">{service}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            {/* Services */}
+            <div className="flex-1 min-w-[160px] space-y-4 animation-delay-400">
+              <h4 className="text-lg font-bold text-white flex items-center gap-2">
+                Services
+                <div className="h-[2px] w-8 bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1]"></div>
+              </h4>
+              <ul className="space-y-2">
+                {["Web Development", "UI/UX Design", "Mobile Apps"].map(
+                  (service, index) => (
+                    <li
+                      key={service}
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="group flex items-center gap-2 text-gray-400 hover:text-[#DD7BDF] transition-all duration-300 cursor-pointer">
+                        <span className="w-0 h-[2px] bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1] group-hover:w-4 transition-all duration-300 shadow-lg shadow-[#DD7BDF]/50"></span>
+                        <span className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">
+                          {service}
+                        </span>
+                      </div>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
           </div>
 
           {/* Contact & Social */}
@@ -113,7 +149,7 @@ const Footer = () => {
             </h4>
 
             {/* Whatsapp */}
-            <a 
+            <a
               href="https://wa.me/201030354268"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 text-gray-400 hover:text-[#FFBBE1] transition-all duration-300"
@@ -122,11 +158,13 @@ const Footer = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-lg blur opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                 <FaWhatsapp className="relative w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <span className="text-sm font-medium drop-shadow-lg">+201030354268</span>
+              <span className="text-sm font-medium drop-shadow-lg">
+                +201030354268
+              </span>
             </a>
-            
+
             {/* Email */}
-            <a 
+            <a
               href="mailto:tasneem.ar.work@gmail.com"
               className="group flex items-center gap-3 text-gray-400 hover:text-[#FFBBE1] transition-all duration-300"
             >
@@ -134,7 +172,9 @@ const Footer = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-lg blur opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                 <FaEnvelope className="relative w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <span className="text-sm font-medium drop-shadow-lg">tasneem.ar.work@gmail.com</span>
+              <span className="text-sm font-medium drop-shadow-lg">
+                tasneem.ar.work@gmail.com
+              </span>
             </a>
 
             {/* Social Links */}
@@ -144,12 +184,32 @@ const Footer = () => {
                 Follow me:
               </p>
               <div className="flex items-center gap-3 flex-wrap">
-                {[ 
-                  { icon: FaGithub, href: "https://github.com/tasneem-abdelrazek", color: "from-[#FFBBE1] to-[#DD7BDF]" },
-                  { icon: FaLinkedin, href: "https://www.linkedin.com/in/tasneem-abdelrazek", color: "from-[#DD7BDF] to-[#FFBBE1]" },
-                  { icon: FaFacebook, href: "https://www.facebook.com/share/16UCBD2riV/", color: "from-[#FFBBE1] to-[#DD7BDF]" },
-                  { icon: FaInstagram, href: "https://www.instagram.com/tasneem.abdelrazek?igsh=ZzBvYjB1N3FtNWVx", color: "from-[#FFBBE1] to-[#DD7BDF]" },
-                  { icon: FaTiktok, href: "https://www.tiktok.com/@tasneem_abdelrazek?_r=1&_t=ZS-91E8r4r5Vm3", color: "from-[#FFBBE1] to-[#DD7BDF]" },
+                {[
+                  {
+                    icon: FaGithub,
+                    href: "https://github.com/tasneem-abdelrazek",
+                    color: "from-[#FFBBE1] to-[#DD7BDF]",
+                  },
+                  {
+                    icon: FaLinkedin,
+                    href: "https://www.linkedin.com/in/tasneem-abdelrazek",
+                    color: "from-[#DD7BDF] to-[#FFBBE1]",
+                  },
+                  {
+                    icon: FaFacebook,
+                    href: "https://www.facebook.com/share/16UCBD2riV/",
+                    color: "from-[#FFBBE1] to-[#DD7BDF]",
+                  },
+                  {
+                    icon: FaInstagram,
+                    href: "https://www.instagram.com/tasneem.abdelrazek?igsh=ZzBvYjB1N3FtNWVx",
+                    color: "from-[#FFBBE1] to-[#DD7BDF]",
+                  },
+                  {
+                    icon: FaTiktok,
+                    href: "https://www.tiktok.com/@tasneem_abdelrazek?_r=1&_t=ZS-91E8r4r5Vm3",
+                    color: "from-[#FFBBE1] to-[#DD7BDF]",
+                  },
                 ].map((social, index) => (
                   <a
                     key={index}
@@ -158,7 +218,9 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="group relative p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 hover:border-[#DD7BDF]/40 transition-all duration-300 hover:scale-110"
                   >
-                    <div className={`absolute -inset-1 bg-gradient-to-r ${social.color} rounded-xl blur opacity-0 group-hover:opacity-50 transition-all duration-500 animate-spin-slow`}></div>
+                    <div
+                      className={`absolute -inset-1 bg-gradient-to-r ${social.color} rounded-xl blur opacity-0 group-hover:opacity-50 transition-all duration-500 animate-spin-slow`}
+                    ></div>
                     <social.icon className="relative w-5 h-5 text-gray-400 group-hover:text-[#FFBBE1] transition-colors duration-300 drop-shadow-lg" />
                   </a>
                 ))}
@@ -181,7 +243,8 @@ const Footer = () => {
           <p className="text-sm text-gray-500 flex items-center gap-2 flex-wrap justify-center">
             <span>© 2025 Tasneem Abdelrazek.</span>
             <span className="flex items-center gap-1">
-              Made with <FaHeart className="w-4 h-4 text-[#FFBBE1] animate-pulse drop-shadow-lg" />
+              Made with{" "}
+              <FaHeart className="w-4 h-4 text-[#FFBBE1] animate-pulse drop-shadow-lg" />
             </span>
             <span>All rights reserved.</span>
           </p>
