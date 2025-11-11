@@ -70,13 +70,13 @@ const MobileNav = ({ closeMobileNav }: { closeMobileNav: () => void }) => {
         </div>
 
         {/* Links */}
-        <nav className="flex flex-col gap-3 px-6 py-6">
+        <nav className="flex flex-col gap-3 px-6 py-3">
           {NavLinks.map((link, index) => (
             <Link
               key={link.name}
               href={link.path}
               onClick={closeMobileNav}
-              className="group relative flex items-center justify-between px-5 py-4 rounded-xl hover:bg-gradient-to-r hover:from-[#FFBBE1]/10 hover:to-[#DD7BDF]/10 transition-all border border-transparent hover:border-[#DD7BDF]/30 overflow-hidden"
+              className="group relative flex items-center justify-between px-5 py-2 rounded-xl hover:bg-gradient-to-r hover:from-[#FFBBE1]/10 hover:to-[#DD7BDF]/10 transition-all border border-transparent hover:border-[#DD7BDF]/30 overflow-hidden"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {/* Shine Effect */}
@@ -120,7 +120,7 @@ const MobileNav = ({ closeMobileNav }: { closeMobileNav: () => void }) => {
         </div>  */}
 
         {/* Footer */}
-        <div className="mt-auto px-6 py-6 border-t border-[#DD7BDF]/20">
+        <div className="mt-auto px-6 py-4 border-t border-[#DD7BDF]/20">
           <div className="text-center">
             <p className="text-sm bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] bg-clip-text text-transparent font-bold drop-shadow-lg">
               Made with 💜 by Tasneem
