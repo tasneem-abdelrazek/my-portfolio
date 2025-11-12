@@ -93,32 +93,6 @@ const MobileNav = ({ closeMobileNav }: { closeMobileNav: () => void }) => {
           ))}
         </nav>
 
-        {/* Logout Button */}
-        {/* <div className="px-6 pb-4">
-          <button 
-            onClick={() => {
-              // logout logic 
-              console.log("Logout clicked");
-              closeMobileNav();
-            }}
-            className="group relative w-full flex items-center justify-center gap-3 px-5 py-4 rounded-xl bg-gradient-to-r from-red-500/20 to-pink-500/20 hover:from-red-500/30 hover:to-pink-500/30 transition-all border border-red-400/30 hover:border-red-400/50 overflow-hidden"
-          >
-            {/* Shine Effect */}
-            {/* <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span> */}
-            
-            {/* Icon */}
-            {/* <FaSignOutAlt className="relative w-5 h-5 text-red-400 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 drop-shadow-lg" /> */}
-            
-            {/* Text */}
-            {/* <span className="relative text-lg text-red-300 font-bold group-hover:text-red-200 transition-colors drop-shadow-lg">
-              Logout
-            </span> */}
-
-            {/* Glow Effect */}
-            {/* <span className="absolute inset-0 bg-red-500/0 group-hover:bg-red-500/10 rounded-xl transition-all duration-300"></span>
-          </button>
-        </div>  */}
-
         {/* Footer */}
         <div className="mt-auto px-6 py-4 border-t border-[#DD7BDF]/20">
           <div className="text-center">

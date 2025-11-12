@@ -53,7 +53,7 @@ const projects = [
   {
     id: 5,
     title: "Hosto",
-    description: "/anding page with clean design and quality acheived.",
+    description: "Landing page with clean design and quality acheived.",
     image: "/images/hosto-screen.png",
     tags: ["HTML5", "CSS3", "Bootstrap"],
     github: "https://github.com/tasneem-abdelrazek/hosto",

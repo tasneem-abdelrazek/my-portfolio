@@ -91,18 +91,6 @@ const Skills = () => {
               <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
             </div>
           </div>
-
-          {/* Badge */}
-          {/* <div className="inline-flex items-center gap-2 px-2 py-1 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 rounded-full border border-[#DD7BDF]/20">
-            <BsStars className="w-3 h-3 text-[#FFBBE1]" />
-            <span className="text-[10px] font-bold text-gray-300">
-              {skill.percentage >= 85
-                ? "Expert"
-                : skill.percentage >= 70
-                ? "Advanced"
-                : "Intermediate"}
-            </span>
-          </div> */}
         </div>
       </div>
     );
@@ -174,50 +162,6 @@ const Skills = () => {
             </div>
           </div>
         </div>
-
-        {/* Summary */}
-        {/* <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 animate-fadeInUp animation-delay-900">
-          {[
-            {
-              label: "Total Skills",
-              value: `${
-                skillsData.expert.length + skillsData.familiar.length
-              }+`,
-              color: "from-[#FFBBE1] to-[#DD7BDF]",
-            },
-            {
-              label: "Expert Level",
-              value: `${skillsData.expert.length}`,
-              color: "from-[#DD7BDF] to-[#FFBBE1]",
-            },
-            {
-              label: "Y. Experience",
-              value: "1+",
-              color: "from-[#FFBBE1] to-[#DD7BDF]",
-            },
-            {
-              label: "Projects Done",
-              value: "10+",
-              color: "from-[#DD7BDF] to-[#FFBBE1]",
-            },
-          ].map((stat, index) => (
-            <div key={index} className="group relative">
-              <div
-                className={`absolute -inset-1 bg-gradient-to-r ${stat.color} rounded-xl blur opacity-0 group-hover:opacity-40 transition-opacity duration-500`}
-              ></div>
-              <div className="relative bg-white/5 backdrop-blur-xl rounded-xl px-4 py-6 border border-white/10 group-hover:border-[#DD7BDF]/30 transition-all duration-300 text-center">
-                <p
-                  className={`text-3xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}
-                >
-                  {stat.value}
-                </p>
-                <p className="text-gray-400 text-xs font-semibold">
-                  {stat.label}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div> */}
       </div>
 
       {sectionDivider}

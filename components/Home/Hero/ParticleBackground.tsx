@@ -24,85 +24,35 @@ export default function ParticlesHero() {
     console.log(container);
   };
 
-
   const options: ISourceOptions = useMemo(
-  () => ({
-    background: { color: { value: "transparent" } },
-    fullScreen: { enable: false },
-    particles: {
-      number: { value: 80 },
-      color: { value: ["#00ffff", "#ff00ff", "#ffff00"] },
-      links: {
-        enable: true,
-        color: "#00ffff",
-        distance: 120,
-        opacity: 0.4,
+    () => ({
+      background: { color: { value: "transparent" } },
+      fullScreen: { enable: false },
+      particles: {
+        number: { value: 80 },
+        color: { value: ["#00ffff", "#ff00ff", "#ffff00"] },
+        links: {
+          enable: true,
+          color: "#00ffff",
+          distance: 120,
+          opacity: 0.4,
+        },
+        move: { enable: true, speed: 2, outModes: { default: "out" } },
+        opacity: {
+          value: 0.8,
+          animation: { enable: true, speed: 1, minimumValue: 0.4 },
+        },
+        size: { value: 2 },
       },
-      move: { enable: true, speed: 2, outModes: { default: "out" } },
-      opacity: {
-        value: 0.8,
-        animation: { enable: true, speed: 1, minimumValue: 0.4 },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" },
+        },
       },
-      size: { value: 2 },
-    },
-    interactivity: {
-      events: {
-        onHover: { enable: true, mode: "repulse" },
-        onClick: { enable: true, mode: "push" },
-      },
-    },
-  }),
-  []
-);
-
-
-  // const options: ISourceOptions = useMemo(
-  //   () => ({
-  //     background: {
-  //       color: { value: "transparent" },
-  //     },
-  //     fullScreen: {
-  //       enable: false,
-  //     },
-  //     fpsLimit: 100,
-  //     interactivity: {
-  //       events: {
-  //         onClick: { enable: true, mode: "push" },
-  //         onHover: { enable: true, mode: "repulse" },
-  //       },
-  //       modes: {
-  //         push: { quantity: 4 },
-  //         repulse: { distance: 100, duration: 0.4 },
-  //       },
-  //     },
-  //     particles: {
-  //       color: { value: "#ffffff" },
-  //       links: {
-  //         color: "#ffffff",
-  //         distance: 150,
-  //         enable: true,
-  //         opacity: 0.5,
-  //         width: 1,
-  //       },
-  //       move: {
-  //         direction: MoveDirection.none,
-  //         enable: true,
-  //         outModes: { default: OutMode.out },
-  //         speed: 2,
-  //       },
-  //       number: {
-  //         density: { enable: true, area: 800 },
-  //         value: 100,
-  //       },
-  //       opacity: { value: 0.5 },
-  //       shape: { type: "circle" },
-  //       size: { value: { min: 1, max: 4 } },
-  //     },
-  //     detectRetina: true,
-  //   }),
-  //   []
-  // );
-
+    }),
+    []
+  );
   if (!init) return null;
 
   return (
