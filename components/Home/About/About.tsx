@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { BsStars } from "react-icons/bs";
 import SectionHeader from "@/components/common/SectionHeader";
 import StatsCards from "./StatsCards";
 import EducationCard from "./EducationCard";
@@ -20,28 +19,13 @@ const About = () => {
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-8 animate-fadeInUp">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 rounded-full border border-[#DD7BDF]/30 mb-4">
-            <BsStars className="w-4 h-4 text-[#FFBBE1] animate-pulse" />
-            <span className="text-sm font-bold bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] bg-clip-text text-transparent">
-              About Me
-            </span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl font-black leading-tight mb-2">
-            <span className="text-white">Design and </span>
-            <span className="relative inline-block">
-              <span className="absolute inset-0 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] blur-2xl opacity-40"></span>
-              <span className="relative bg-gradient-to-r from-[#FFBBE1] via-[#DD7BDF] to-[#FFBBE1] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,187,225,0.6)] animate-gradient-x bg-[length:200%_200%]">
-                Develop
-              </span>
-            </span>
-          </h1>
-          <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">
-            Frontend Developer passionate about crafting dynamic, responsive, and
-            visually appealing websites using React and modern design frameworks.
-          </p>
-        </div>
+        <SectionHeader
+          badge="About Me"
+          title="Design and"
+          highlightText="Develop"
+          description="Frontend Developer passionate about crafting dynamic, responsive, and
+            visually appealing websites using React and modern design frameworks"
+        />
 
         {/* Stats Cards */}
         <StatsCards />

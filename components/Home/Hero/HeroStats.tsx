@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { FaCode, FaRocket, FaHeart } from "react-icons/fa";
+import { FaCode, FaLaptopCode, FaHeart } from "react-icons/fa";
 
 interface StatBadge {
   icon: React.ElementType;
@@ -15,7 +15,7 @@ const statsBadges: StatBadge[] = [
     color: "from-[#FFBBE1] to-[#DD7BDF]",
   },
   {
-    icon: FaRocket,
+    icon: FaLaptopCode,
     text: "10+ Projects",
     color: "from-[#DD7BDF] to-[#FFBBE1]",
   },
@@ -28,7 +28,7 @@ const statsBadges: StatBadge[] = [
 
 const HeroStats = () => {
   return (
-    <div className="mt-12 mb-6 flex gap-4 flex-wrap justify-center animate-fadeInUp animation-delay-1500">
+    <div className="mt-8 mb-6 flex gap-4 flex-wrap justify-center animate-fadeInUp animation-delay-1500">
       {statsBadges.map((badge, index) => (
         <div
           key={index}

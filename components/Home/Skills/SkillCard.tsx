@@ -61,7 +61,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, index }) => {
       <div className="relative space-y-3">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <div className="absolute -inset-2 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-all duration-300"></div>
+            {/* <div className="absolute -inset-2 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-all duration-300"></div> */}
             <div className="relative w-10 h-10 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <Icon className="w-6 h-6 text-white" />
             </div>

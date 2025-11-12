@@ -11,7 +11,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-5 border border-white/10 hover:border-[#DD7BDF]/40 transition-all duration-300 group">
       <div className="flex items-start gap-4 mb-3">
         <div className="relative">
-          <div className="absolute -inset-2 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-xl blur-md opacity-40 group-hover:opacity-60 transition-all duration-300"></div>
+          {/* <div className="absolute -inset-2 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-xl blur-md opacity-40 group-hover:opacity-60 transition-all duration-300"></div> */}
           <div className="relative w-12 h-12 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF] rounded-xl flex items-center justify-center">
             {React.createElement(project.icon, { className: "w-6 h-6 text-white" })}
           </div>
