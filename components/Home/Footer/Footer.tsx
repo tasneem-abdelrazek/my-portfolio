@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { NavLinks } from "@/constant/constant";
+import { navLinks, socialLinks, contactInfo } from "../../data/navigation";
 import {
   FaGithub,
   FaLinkedin,
@@ -13,7 +13,7 @@ import {
   FaTiktok,
 } from "react-icons/fa";
 import { BsStars, BsArrowUp } from "react-icons/bs";
-import { animationStyles } from "@/constant/theme";
+import { animationStyles } from "../../styles/theme";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -27,6 +27,14 @@ const Footer = () => {
     }
   };
 
+  const socialIcons = [
+    { icon: FaGithub, href: socialLinks.github, color: "from-[#FFBBE1] to-[#DD7BDF]" },
+    { icon: FaLinkedin, href: socialLinks.linkedin, color: "from-[#DD7BDF] to-[#FFBBE1]" },
+    { icon: FaFacebook, href: socialLinks.facebook, color: "from-[#FFBBE1] to-[#DD7BDF]" },
+    { icon: FaInstagram, href: socialLinks.instagram, color: "from-[#FFBBE1] to-[#DD7BDF]" },
+    { icon: FaTiktok, href: socialLinks.tiktok, color: "from-[#FFBBE1] to-[#DD7BDF]" },
+  ];
+
   return (
     <footer
       id="contact"
@@ -34,16 +42,8 @@ const Footer = () => {
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,187,225,0.1),transparent_70%)]"></div>
-      <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(221,123,223,0.15),transparent_50%)] animate-pulse"
-        style={{ animationDelay: "1s" }}
-      ></div>
-      <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,187,225,0.1),transparent_50%)] animate-pulse"
-        style={{ animationDelay: "2s" }}
-      ></div>
-
-      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(221,123,223,0.15),transparent_50%)] animate-pulse" style={{ animationDelay: "1s" }}></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,187,225,0.1),transparent_50%)] animate-pulse" style={{ animationDelay: "2s" }}></div>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
       {/* Floating Blobs */}
@@ -62,7 +62,6 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3 group">
               <div className="relative">
-                {/* Rotating Rings */}
                 <div className="absolute -inset-2 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-xl blur-md opacity-40 group-hover:opacity-70 transition-all duration-500 animate-spin-slow"></div>
                 <div className="relative w-12 h-12 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF] rounded-xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
                   <FaCode className="w-6 h-6 text-white drop-shadow-lg" />
@@ -76,8 +75,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Turning imagination into interactive experiences that captivate
-              and connect.
+              Turning imagination into interactive experiences that captivate and connect.
             </p>
             <div className="flex items-center gap-2 text-sm animate-pulse">
               <BsStars className="w-4 h-4 text-[#FFBBE1] drop-shadow-lg" />
@@ -87,7 +85,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links + Services in same row on small screens */}
+          {/* Quick Links + Services */}
           <div className="flex flex-wrap justify-between gap-8 md:col-span-2 lg:col-span-2">
             {/* Quick Links */}
             <div className="flex-1 min-w-[160px] space-y-4 animation-delay-200">
@@ -96,11 +94,8 @@ const Footer = () => {
                 <div className="h-[2px] w-8 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF]"></div>
               </h4>
               <ul className="space-y-2">
-                {NavLinks.map((link, index) => (
-                  <li
-                    key={link.name}
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
+                {navLinks.map((link, index) => (
+                  <li key={link.name} style={{ animationDelay: `${index * 100}ms` }}>
                     <button
                       onClick={() => scrollToSection(link.path)}
                       className="group flex items-center gap-2 text-gray-400 hover:text-[#FFBBE1] transition-all duration-300"
@@ -122,21 +117,16 @@ const Footer = () => {
                 <div className="h-[2px] w-8 bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1]"></div>
               </h4>
               <ul className="space-y-2">
-                {["Web Development", "UI/UX Design", "Mobile Apps"].map(
-                  (service, index) => (
-                    <li
-                      key={service}
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className="group flex items-center gap-2 text-gray-400 hover:text-[#DD7BDF] transition-all duration-300 cursor-pointer">
-                        <span className="w-0 h-[2px] bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1] group-hover:w-4 transition-all duration-300 shadow-lg shadow-[#DD7BDF]/50"></span>
-                        <span className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">
-                          {service}
-                        </span>
-                      </div>
-                    </li>
-                  )
-                )}
+                {["Web Development", "UI/UX Design", "Mobile Apps"].map((service, index) => (
+                  <li key={service} style={{ animationDelay: `${index * 100}ms` }}>
+                    <div className="group flex items-center gap-2 text-gray-400 hover:text-[#DD7BDF] transition-all duration-300 cursor-pointer">
+                      <span className="w-0 h-[2px] bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1] group-hover:w-4 transition-all duration-300 shadow-lg shadow-[#DD7BDF]/50"></span>
+                      <span className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">
+                        {service}
+                      </span>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -150,7 +140,7 @@ const Footer = () => {
 
             {/* Whatsapp */}
             <a
-              href="https://wa.me/201030354268"
+              href={socialLinks.whatsapp}
               rel="noopener noreferrer"
               className="group flex items-center gap-3 text-gray-400 hover:text-[#FFBBE1] transition-all duration-300"
             >
@@ -158,23 +148,19 @@ const Footer = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-lg blur opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                 <FaWhatsapp className="relative w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <span className="text-sm font-medium drop-shadow-lg">
-                +201030354268
-              </span>
+              <span className="text-sm font-medium drop-shadow-lg">{contactInfo.phone}</span>
             </a>
 
             {/* Email */}
             <a
-              href="mailto:tasneem.ar.work@gmail.com"
+              href={socialLinks.email}
               className="group flex items-center gap-3 text-gray-400 hover:text-[#FFBBE1] transition-all duration-300"
             >
               <div className="relative p-2 bg-white/5 rounded-lg group-hover:bg-[#FFBBE1]/10 transition-all duration-300 border border-white/10 group-hover:border-[#FFBBE1]/30">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-lg blur opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                 <FaEnvelope className="relative w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <span className="text-sm font-medium drop-shadow-lg">
-                tasneem.ar.work@gmail.com
-              </span>
+              <span className="text-sm font-medium drop-shadow-lg">{contactInfo.email}</span>
             </a>
 
             {/* Social Links */}
@@ -184,33 +170,7 @@ const Footer = () => {
                 Follow me:
               </p>
               <div className="flex items-center gap-3 flex-wrap">
-                {[
-                  {
-                    icon: FaGithub,
-                    href: "https://github.com/tasneem-abdelrazek",
-                    color: "from-[#FFBBE1] to-[#DD7BDF]",
-                  },
-                  {
-                    icon: FaLinkedin,
-                    href: "https://www.linkedin.com/in/tasneem-abdelrazek",
-                    color: "from-[#DD7BDF] to-[#FFBBE1]",
-                  },
-                  {
-                    icon: FaFacebook,
-                    href: "https://www.facebook.com/share/16UCBD2riV/",
-                    color: "from-[#FFBBE1] to-[#DD7BDF]",
-                  },
-                  {
-                    icon: FaInstagram,
-                    href: "https://www.instagram.com/tasneem.abdelrazek?igsh=ZzBvYjB1N3FtNWVx",
-                    color: "from-[#FFBBE1] to-[#DD7BDF]",
-                  },
-                  {
-                    icon: FaTiktok,
-                    href: "https://www.tiktok.com/@tasneem_abdelrazek?_r=1&_t=ZS-91E8r4r5Vm3",
-                    color: "from-[#FFBBE1] to-[#DD7BDF]",
-                  },
-                ].map((social, index) => (
+                {socialIcons.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
@@ -218,9 +178,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="group relative p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 hover:border-[#DD7BDF]/40 transition-all duration-300 hover:scale-110"
                   >
-                    <div
-                      className={`absolute -inset-1 bg-gradient-to-r ${social.color} rounded-xl blur opacity-0 group-hover:opacity-50 transition-all duration-500 animate-spin-slow`}
-                    ></div>
+                    <div className={`absolute -inset-1 bg-gradient-to-r ${social.color} rounded-xl blur opacity-0 group-hover:opacity-50 transition-all duration-500 animate-spin-slow`}></div>
                     <social.icon className="relative w-5 h-5 text-gray-400 group-hover:text-[#FFBBE1] transition-colors duration-300 drop-shadow-lg" />
                   </a>
                 ))}
@@ -229,7 +187,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider with Animation */}
+        {/* Divider */}
         <div className="relative my-8">
           <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-900 px-4">
@@ -239,17 +197,15 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 animate-fadeInUp animation-delay-900">
-          {/* Copyright */}
           <p className="text-sm text-gray-500 flex items-center gap-2 flex-wrap justify-center">
             <span>© 2025 Tasneem Abdelrazek.</span>
             <span className="flex items-center gap-1">
-              Made with{" "}
-              <FaHeart className="w-4 h-4 text-[#FFBBE1] animate-pulse drop-shadow-lg" />
+              Made with <FaHeart className="w-4 h-4 text-[#FFBBE1] animate-pulse drop-shadow-lg" />
             </span>
             <span>All rights reserved.</span>
           </p>
 
-          {/* Scroll to Top Button */}
+          {/* Scroll to Top */}
           <button
             onClick={scrollToTop}
             className="group relative px-6 py-3 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
@@ -266,7 +222,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Animations */}
       <style jsx>{animationStyles}</style>
     </footer>
   );

@@ -1,25 +1,16 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import {
-  BsStars,
-  BsArrowRight,
-  BsWhatsapp,
-  BsCheckCircleFill,
-} from "react-icons/bs";
-import { servicesData } from "@/constant/constant";
-import {
-  backgroundEffects,
-  sectionDivider,
-  animationStyles,
-} from "@/constant/theme";
+import SectionHeader from "@/components/common/SectionHeader";
+import ServiceCard from "./ServiceCard";
+import { servicesData, whatsappConfig } from "../../data/services";
+import { BsWhatsapp, BsArrowRight } from "react-icons/bs";
+import { backgroundEffects, sectionDivider, animationStyles } from "../../styles/theme";
 
 const Services = () => {
   const openWhatsApp = (message: string) => {
-    const phoneNumber = "201030354268";
     const encodedMessage = encodeURIComponent(message);
     window.open(
-      `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
+      `https://wa.me/${whatsappConfig.phoneNumber}?text=${encodedMessage}`,
       "_blank"
     );
   };
@@ -32,92 +23,22 @@ const Services = () => {
       {backgroundEffects}
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-8 animate-fadeInUp">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FFBBE1]/10 to-[#DD7BDF]/10 rounded-full border border-[#DD7BDF]/30 mb-4">
-            <BsStars className="w-4 h-4 text-[#FFBBE1] animate-pulse" />
-            <span className="text-sm font-semibold bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] bg-clip-text text-transparent">
-              What I Offer
-            </span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-2">
-            <span className="text-white">My </span>
-            <span className="relative inline-block">
-              <span className="absolute inset-0 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] blur-2xl opacity-40"></span>
-              <span className="relative bg-gradient-to-r from-[#FFBBE1] via-[#DD7BDF] to-[#FFBBE1] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,187,225,0.5)] animate-gradient-x bg-[length:200%_200%]">
-                Services
-              </span>
-            </span>
-          </h1>
-          <p className="text-gray-400 text-base max-w-xl mx-auto">
-            Professional services tailored to bring your digital vision to life
-          </p>
-        </div>
+        <SectionHeader
+          badge="What I Offer"
+          title="My"
+          highlightText="Services"
+          description="Professional services tailored to bring your digital vision to life"
+        />
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {servicesData.map((service, index) => (
-            <div
+            <ServiceCard
               key={service.id}
-              className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10 hover:border-[#DD7BDF]/30 transition-all duration-500 hover:scale-[1.02] animate-fadeInUp"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              {/* Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-
-              <div className="relative">
-                {/* Image */}
-                <div className="relative h-52 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute top-3 left-3 z-20 w-10 h-10 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF] rounded-full flex items-center justify-center font-bold text-white text-sm shadow-xl">
-                    {String(service.id).padStart(2, "0")}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-5 space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-[#FFBBE1] transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Features */}
-                  <div className="space-y-1.5">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <BsCheckCircleFill className="w-3.5 h-3.5 text-[#FFBBE1]" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Book Now Button */}
-                  <button
-                    onClick={() => openWhatsApp(service.whatsappMessage)}
-                    className="group/btn relative w-full px-5 py-3 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF]"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] opacity-0 group-hover/btn:opacity-100 blur-lg transition-opacity duration-500"></div>
-                    <span className="relative flex items-center justify-center gap-2 text-white font-semibold text-sm">
-                      <BsWhatsapp className="w-4 h-4" />
-                      Book Now
-                      <BsArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
+              service={service}
+              index={index}
+              onBookNow={openWhatsApp}
+            />
           ))}
         </div>
 
@@ -125,12 +46,10 @@ const Services = () => {
         <div className="mt-8 text-center animate-fadeInUp animation-delay-900">
           <div className="inline-block bg-white/5 backdrop-blur-xl rounded-xl p-6 border border-white/10">
             <p className="text-lg text-gray-300 mb-3">
-              Don’t see what you’re looking for?
+              Don't see what you're looking for?
             </p>
             <button
-              onClick={() =>
-                openWhatsApp("Hello, I need a custom application.")
-              }
+              onClick={() => openWhatsApp(whatsappConfig.defaultMessage)}
               className="group relative px-6 py-2.5 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1]"></div>

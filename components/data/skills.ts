@@ -1,14 +1,15 @@
-export const NavLinks = [
-  { name: "Home", path: "#home" },
-  { name: "About", path: "#about" },
-  { name: "Skills", path: "#skills" },
-  { name: "Projects", path: "#projects" },
-  { name: "Services", path: "#services" },
-  { name: "Contact", path: "#contact" },
-];
+export interface Skill {
+  name: string;
+  percentage: number;
+  icon: string;
+}
 
-// Skills Data
-export const skillsData = {
+export interface SkillsData {
+  expert: Skill[];
+  familiar: Skill[];
+}
+
+export const skillsData: SkillsData = {
   expert: [
     { name: "HTML", percentage: 95, icon: "html5" },
     { name: "CSS", percentage: 95, icon: "css3" },
@@ -31,22 +32,23 @@ export const skillsData = {
   ]
 };
 
-// Services Data
-export const servicesData = [
-  {
-    id: 1,
-    title: "Portfolio Website",
-    description: "Modern web portfolio.",
-    image: "/images/portfolio-screen.png",
-    features: ["React / Next.js", "Responsive Design", "Performance Optimization"],
-    whatsappMessage: "Hello, I'm contacting for web portfolio service."
-  },
-  {
-    id: 2,
-    title: "Landing Page",
-    description: "One web page for small businesses.",
-    image: "/images/coffee-service.png",
-    features: ["React / HTML, CSS, JavaScript", "Bootstrap, Tailwind", "Responsive Design"],
-    whatsappMessage: "Hello, I'm contacting for landing page service."
-  }
-];
+// Icon mapping for skills
+export const skillIconMap: Record<string, any> = {
+  html5: "FaHtml5",
+  css3: "FaCss3Alt",
+  javascript: "FaJsSquare",
+  react: "FaReact",
+  nextjs: "SiNextdotjs",
+  typescript: "SiTypescript",
+  tailwindcss: "SiTailwindcss",
+  bootstrap: "FaBootstrap",
+  nodejs: "FaNode",
+  express: "SiExpress",
+  git: "FaGitAlt",
+  figma: "FaFigma",
+  firebase: "SiFirebase",
+  jira: "SiJira",
+  ai: "SiOpenai",
+  mongodb: "SiMongodb",
+  redux: "SiRedux",
+};
