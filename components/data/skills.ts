@@ -28,7 +28,7 @@ export const skillsData: SkillsData = {
     { name: "Figma", percentage: 75, icon: "figma" },
     { name: "Firebase", percentage: 90, icon: "firebase" },
     { name: "Jira", percentage: 70, icon: "jira" },
-    { name: "AI", percentage: 80, icon: "ai" },
+    { name: "AI Tools", percentage: 80, icon: "ai" },
   ]
 };
 
