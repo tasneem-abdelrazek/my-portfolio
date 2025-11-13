@@ -34,7 +34,7 @@ const ProjectSlider: React.FC<ProjectSliderProps> = ({ currentSlide, setCurrentS
                   : "opacity-0 scale-110"
               }`}
             >
-              <Image src={project.image} alt={project.title} fill className="object-cover" />
+              <Image src={project.image} alt={project.title} fill className="object-fit" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </div>
           ))}

@@ -26,16 +26,6 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Forever E-Commerce Platform",
-    description: "Modern online shopping website with smooth UX.",
-    image: "/images/forever-screen.png",
-    tags: ["React.js", "Tailwind"],
-    github: "https://github.com/tasneem-abdelrazek/forever-e-commerce",
-    demo: "https://forever-e-commerce-six.vercel.app/",
-    icon: FaShoppingBag,
-  },
-  {
-    id: 2,
     title: "Creative Portfolio",
     description: "Personal portfolio with animations and 3D effects.",
     image: "/images/portfolio-screen.png",
@@ -43,6 +33,16 @@ export const projects: Project[] = [
     github: "https://github.com/tasneem-abdelrazek/my-portfolio",
     demo: "https://my-portfolio-nu-snowy-64.vercel.app/",
     icon: FaUserAstronaut,
+  },
+  {
+    id: 2,
+    title: "Forever E-Commerce Platform",
+    description: "Modern online shopping website with smooth UX.",
+    image: "/images/forever-screen.png",
+    tags: ["React.js", "Tailwind"],
+    github: "https://github.com/tasneem-abdelrazek/forever-e-commerce",
+    demo: "https://forever-e-commerce-six.vercel.app/",
+    icon: FaShoppingBag,
   },
   {
     id: 3,
