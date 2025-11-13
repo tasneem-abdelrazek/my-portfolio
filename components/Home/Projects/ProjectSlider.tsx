@@ -1,30 +1,24 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { BsChevronLeft, BsChevronRight, BsStars } from "react-icons/bs";
 import { projects } from "../../data/projects";
 
-const ProjectSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+interface ProjectSliderProps {
+  currentSlide: number;
+  setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
+}
 
+const ProjectSlider: React.FC<ProjectSliderProps> = ({ currentSlide, setCurrentSlide }) => {
   useEffect(() => {
-    if (!isAutoPlaying) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % projects.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [setCurrentSlide]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % projects.length);
-    setIsAutoPlaying(false);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length);
-    setIsAutoPlaying(false);
-  };
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % projects.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length);
 
   return (
     <div className="relative animate-fadeInRight">
@@ -40,12 +34,7 @@ const ProjectSlider = () => {
                   : "opacity-0 scale-110"
               }`}
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-              />
+              <Image src={project.image} alt={project.title} fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </div>
           ))}
@@ -71,10 +60,7 @@ const ProjectSlider = () => {
         {projects.map((_, index) => (
           <button
             key={index}
-            onClick={() => {
-              setCurrentSlide(index);
-              setIsAutoPlaying(false);
-            }}
+            onClick={() => setCurrentSlide(index)}
             className={`relative h-2 rounded-full transition-all duration-500 ${
               index === currentSlide
                 ? "w-10 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF]"

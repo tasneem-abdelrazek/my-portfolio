@@ -7,7 +7,8 @@ import { projects } from "../../data/projects";
 import { backgroundEffects, sectionDivider, animationStyles } from "../../styles/theme";
 
 const Project = () => {
-  const [currentSlide] = useState(0);
+  // const [currentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
     <div
@@ -44,16 +45,17 @@ const Project = () => {
               </h1>
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-md">
                 Explore my collection of modern, high-performance web
-                applications – designed for performance and crafted with care.
+                applications - designed for performance and crafted with care.
               </p>
             </div>
 
-            {/* Current Project Card */}
+            {/* Project info updated with current slide */}
             <ProjectCard project={projects[currentSlide]} />
           </div>
 
-          {/* Right - Slider */}
-          <ProjectSlider />
+          {/* Pass control to slider */}
+          <ProjectSlider currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
+
         </div>
       </div>
 
