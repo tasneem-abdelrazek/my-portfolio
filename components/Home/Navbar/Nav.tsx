@@ -121,8 +121,8 @@ const Nav: React.FC<NavProps> = ({ toggleMobileNav }) => {
         <div className="flex items-center space-x-3 xl:space-x-4">
           {/* Download CV */}
           <a
-            href="/Tasneem-Abdelrazek-CV-Dev.pdf"
-            download="Tasneem-Abdelrazek-CV-Developer"
+            href="/Tasneem-Abdelrazek-Resume.pdf"
+            download="Tasneem-Abdelrazek-Resume"
             className="group relative px-6 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base xl:text-lg font-black cursor-pointer rounded-2xl bg-gradient-to-r from-pink-600 via-purple-600 to-fuchsia-600 hover:from-pink-500 hover:via-purple-500 hover:to-fuchsia-500 transition-all duration-500 flex items-center space-x-2 xl:space-x-3 text-white shadow-2xl shadow-purple-600/60 hover:shadow-pink-500/80 hover:scale-105 overflow-hidden border-2 border-white/20"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
