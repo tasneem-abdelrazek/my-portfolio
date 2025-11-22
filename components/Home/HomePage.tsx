@@ -28,10 +28,10 @@ const Project = dynamic(() => import('@/components/Home/Projects/Project'), {
   ssr: true,
 });
 
-const Services = dynamic(() => import('@/components/Home/Services/Services'), {
-  loading: () => <LoadingSection />,
-  ssr: true,
-});
+// const Services = dynamic(() => import('@/components/Home/Services/Services'), {
+//   loading: () => <LoadingSection />,
+//   ssr: true,
+// });
 
 const HomePage = () => {
   return (
@@ -52,9 +52,9 @@ const HomePage = () => {
         <Project />
       </Suspense>
       
-      <Suspense fallback={<LoadingSection />}>
+      {/* <Suspense fallback={<LoadingSection />}>
         <Services />
-      </Suspense>
+      </Suspense> */}
     </div>
   );
 };

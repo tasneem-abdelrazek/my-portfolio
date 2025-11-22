@@ -8,16 +8,17 @@ export const navLinks: NavLink[] = [
   { name: "About", path: "#about" },
   { name: "Skills", path: "#skills" },
   { name: "Projects", path: "#projects" },
-  { name: "Services", path: "#services" },
+  // { name: "Services", path: "#services" },
   { name: "Contact", path: "#contact" },
 ];
 
 export const socialLinks = {
   github: "https://github.com/tasneem-abdelrazek",
   linkedin: "https://www.linkedin.com/in/tasneem-abdelrazek",
-  facebook: "https://www.facebook.com/share/16UCBD2riV/",
-  instagram: "https://www.instagram.com/tasneem.abdelrazek?igsh=ZzBvYjB1N3FtNWVx",
-  tiktok: "https://www.tiktok.com/@tasneem_abdelrazek?_r=1&_t=ZS-91E8r4r5Vm3",
+  // facebook: "https://www.facebook.com/share/16UCBD2riV/",
+  // instagram: "https://www.instagram.com/tasneem.abdelrazek?igsh=ZzBvYjB1N3FtNWVx",
+  // tiktok: "https://www.tiktok.com/@tasneem_abdelrazek?_r=1&_t=ZS-91E8r4r5Vm3",
+  // twitter: "https://x.com/tas_abdelrazek?t=o_cPmzCBmuwTL4rUl8DiVg&s=08",
   whatsapp: "https://wa.me/201030354268",
   email: "mailto:tasneem.ar.work@gmail.com",
 };

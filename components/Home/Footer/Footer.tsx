@@ -11,6 +11,7 @@ import {
   FaFacebook,
   FaInstagram,
   FaTiktok,
+  FaTwitter,
 } from "react-icons/fa";
 import { BsStars, BsArrowUp } from "react-icons/bs";
 import { animationStyles } from "../../styles/theme";
@@ -30,9 +31,10 @@ const Footer = () => {
   const socialIcons = [
     { icon: FaGithub, href: socialLinks.github, color: "from-[#FFBBE1] to-[#DD7BDF]" },
     { icon: FaLinkedin, href: socialLinks.linkedin, color: "from-[#DD7BDF] to-[#FFBBE1]" },
-    { icon: FaFacebook, href: socialLinks.facebook, color: "from-[#FFBBE1] to-[#DD7BDF]" },
-    { icon: FaInstagram, href: socialLinks.instagram, color: "from-[#FFBBE1] to-[#DD7BDF]" },
-    { icon: FaTiktok, href: socialLinks.tiktok, color: "from-[#FFBBE1] to-[#DD7BDF]" },
+    // { icon: FaFacebook, href: socialLinks.facebook, color: "from-[#FFBBE1] to-[#DD7BDF]" },
+    // { icon: FaInstagram, href: socialLinks.instagram, color: "from-[#FFBBE1] to-[#DD7BDF]" },
+    // { icon: FaTwitter, href: socialLinks.twitter, color: "from-[#FFBBE1] to-[#DD7BDF]" },
+    // { icon: FaTiktok, href: socialLinks.tiktok, color: "from-[#FFBBE1] to-[#DD7BDF]" },
   ];
 
   return (
@@ -88,7 +90,7 @@ const Footer = () => {
           {/* Quick Links + Services */}
           <div className="flex flex-wrap justify-between gap-8 md:col-span-2 lg:col-span-2">
             {/* Quick Links */}
-            <div className="flex-1 min-w-[160px] space-y-4 animation-delay-200">
+            <div className="flex-1 min-w-[140px] space-y-4 animation-delay-200">
               <h4 className="text-lg font-bold text-white flex items-center gap-2">
                 Quick Links
                 <div className="h-[2px] w-8 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF]"></div>
@@ -111,7 +113,7 @@ const Footer = () => {
             </div>
 
             {/* Services */}
-            <div className="flex-1 min-w-[160px] space-y-4 animation-delay-400">
+            <div className="flex-1 min-w-[140px] space-y-4 animation-delay-400">
               <h4 className="text-lg font-bold text-white flex items-center gap-2">
                 Services
                 <div className="h-[2px] w-8 bg-gradient-to-r from-[#DD7BDF] to-[#FFBBE1]"></div>
@@ -169,7 +171,7 @@ const Footer = () => {
                 <BsStars className="w-3 h-3 text-[#FFBBE1]" />
                 Follow me:
               </p>
-              <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center gap-2 flex-wrap">
                 {socialIcons.map((social, index) => (
                   <a
                     key={index}
