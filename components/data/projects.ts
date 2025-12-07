@@ -9,7 +9,8 @@ import {
   FaChartBar, 
   FaGraduationCap, 
   FaMagic, 
-  FaCoffee 
+  FaCoffee,
+  FaTools,
 } from "react-icons/fa";
 
 export interface Project {
@@ -36,6 +37,16 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Enjez",
+    description: "Platform for managing booking servives with AI features. (Team graduation Project for ITI.)",
+    image: "/images/enjez-screen.png",
+    tags: ["React.js", "Tailwind", "Firebase", "Supabase", "Notifications System", "AI Integration"],
+    github: "https://github.com/ahmedshaban-blip/Enjez",
+    demo: "https://enjez.vercel.app/",
+    icon: FaTools,
+  },
+  {
+    id: 3,
     title: "Forever E-Commerce Platform",
     description: "Modern online shopping website with smooth UX.",
     image: "/images/forever-screen.png",
@@ -45,17 +56,17 @@ export const projects: Project[] = [
     icon: FaShoppingBag,
   },
   {
-    id: 3,
+    id: 4,
     title: "Movie Website",
     description: "Movie app with API, search, and dark mode.",
     image: "/images/movie-screen.png",
-    tags: ["React.js", "Redux", "3D"],
+    tags: ["React.js", "Redux"],
     github: "https://github.com/tasneem-abdelrazek/movie-app",
     demo: "https://movie-app-lemon-xi-44.vercel.app/",
     icon: FaFilm,
   },
   {
-    id: 4,
+    id: 5,
     title: "Portfolio",
     description: "Classic portfolio built with React class components.",
     image: "/images/portfolio-class-screen.png",
@@ -65,7 +76,7 @@ export const projects: Project[] = [
     icon: FaUserTie,
   },
   {
-    id: 5,
+    id: 6,
     title: "Hosto",
     description: "Landing page with clean design and quality achieved.",
     image: "/images/hosto-screen.png",
@@ -75,7 +86,7 @@ export const projects: Project[] = [
     icon: FaHospitalAlt,
   },
   {
-    id: 6,
+    id: 7,
     title: "ToTasky",
     description: "Landing page for a task management tool.",
     image: "/images/totasky-screen.png",
@@ -85,7 +96,7 @@ export const projects: Project[] = [
     icon: FaTasks,
   },
   {
-    id: 7,
+    id: 8,
     title: "Dashboard Template",
     description: "Admin dashboard with charts and stats.",
     image: "/images/dashboard-screen.png",
@@ -95,7 +106,7 @@ export const projects: Project[] = [
     icon: FaChartBar,
   },
   {
-    id: 8,
+    id: 9,
     title: "Monac",
     description: "Simple e-learning website.",
     image: "/images/monac-screen.png",
@@ -105,7 +116,7 @@ export const projects: Project[] = [
     icon: FaGraduationCap,
   },
   {
-    id: 9,
+    id: 10,
     title: "WizardZ",
     description: "Creative agency landing page with animation.",
     image: "/images/wizard-screen.png",
@@ -115,7 +126,7 @@ export const projects: Project[] = [
     icon: FaMagic,
   },
   {
-    id: 10,
+    id: 11,
     title: "Coffee",
     description: "Coffee shop landing page with grid layout.",
     image: "/images/coffee-screen.png",
